@@ -1,0 +1,256 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  padding: 10px;
+}
+
+.header {
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls button {
+  padding: 6px 12px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #444;
+}
+
+.data-limit-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.data-limit-control label {
+  color: #ccc;
+  white-space: nowrap;
+}
+
+.data-limit-control input[type="range"] {
+  width: 150px;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.data-limit-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #4a9eff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.data-limit-control input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #4a9eff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.data-limit-control input[type="range"]:hover::-webkit-slider-thumb {
+  background: #5aaaff;
+}
+
+.data-limit-control input[type="range"]:hover::-moz-range-thumb {
+  background: #5aaaff;
+}
+
+.data-limit-control #dataLimitValue {
+  color: #fff;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.panel {
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel h2 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.type-controls,
+.time-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.type-controls label,
+.time-controls label {
+  color: #ccc;
+}
+
+.type-controls select,
+.time-controls select {
+  padding: 4px 8px;
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.type-controls select:hover,
+.time-controls select:hover {
+  background: #444;
+}
+
+.type-controls select:focus,
+.time-controls select:focus {
+  outline: none;
+  border-color: #4a9eff;
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+}
+
+.axis path, .axis line {
+  stroke: #666;
+}
+
+.axis text {
+  fill: #999;
+  font-size: 10px;
+}
+
+.bar {
+  fill: #555;
+}
+
+.bar.selected {
+  fill: #4a9eff;
+}
+
+.bar:hover {
+  fill: #777;
+}
+
+.brush .selection {
+  fill: rgba(74, 158, 255, 0.2);
+  stroke: #4a9eff;
+}
+
+.table-panel {
+  margin-top: 15px;
+}
+
+.table-panel .data-table {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.preview-table thead {
+  background: transparent;
+}
+
+.preview-table th {
+  padding: 14px 24px;
+  text-align: left;
+  color: #999;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #444;
+}
+
+.preview-table th.col-date {
+  width: 18%;
+}
+
+.preview-table th.col-type {
+  width: 42%;
+}
+
+.preview-table th.col-coords {
+  width: 40%;
+  text-align: right;
+}
+
+.preview-table td {
+  padding: 14px 24px;
+  color: #e0e0e0;
+  border-bottom: 1px solid #333;
+  font-size: 13px;
+}
+
+.preview-table td.col-coords {
+  text-align: right;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  color: #ccc;
+}
+
+.preview-table td.col-type {
+  color: #e0e0e0;
+}
+
+.preview-table td.col-date {
+  color: #ccc;
+  white-space: nowrap;
+}
+
+.preview-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.preview-table tbody tr:last-child td {
+  border-bottom: none;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Interactive Visualization - Chicago Crimes</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Assignment 3: Interactive Visualization (Chicago Crimes)</h1>
+      <div class="controls">
+        <button id="reloadBtn">Reload Data</button>
+        <button id="resetBtn">Reset Filters</button>
+        <div class="data-limit-control">
+          <label for="dataLimitSlider">Data Points:</label>
+          <input type="range" id="dataLimitSlider" min="20000" max="500000" step="20000" value="50000">
+          <span id="dataLimitValue">50,000</span>
+        </div>
+        <span id="stats">Loading...</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Time Distribution</h2>
+        <div class="time-controls">
+          <label for="timeGranularitySelect">Granularity:</label>
+          <select id="timeGranularitySelect">
+            <option value="weekly">Weekly</option>
+            <option value="monthly" selected>Monthly</option>
+            <option value="yearly">Yearly</option>
+          </select>
+        </div>
+        <div id="timeChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Crime Type</h2>
+        <div class="type-controls">
+          <label for="topNSelect">Show Top N:</label>
+          <select id="topNSelect">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+        <div id="typeChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Lat/Long Scatter</h2>
+        <canvas id="scatterCanvas" class="chart"></canvas>
+      </section>
+    </main>
+
+    <section class="panel table-panel">
+      <h2>Data Preview (Top 10 Records)</h2>
+      <div id="dataTable" class="data-table"></div>
+    </section>
+
+    <script src="./main.js?v=2"></script>
+  </body>
+</html>
